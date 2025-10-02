@@ -16,29 +16,36 @@ buttons.forEach(button => {
     // arr.pop()
     // string = arr.join("");
 
-
-
     } 
     else if (value === "C") {
       // clear everything
       string = "";
     } 
+    else if (value === "=") {
+        try {
+            if (string.includes("% of")) {
+            // Example input: "95 % of 12"
+            let parts = string.split("% of");
+            if (parts.length === 2) {
+                let a = parseFloat(parts[0].trim()); // left number (percentage)
+                let b = parseFloat(parts[1].trim()); // right number (base value)
 
-else if (value === "=") {
-      // Evaluate expression
-      try {
-        string = eval(
-          string
-            .replaceAll("×", "*")
-            .replaceAll("÷", "/")
-            .replaceAll("−", "-")
-            // "+" works as is
-        ).toString();
-      } catch {
-        string = "Error";
-      }
-    } 
-
+                string = ((a / 100) * b).toString(); // percentage formula
+            }
+                } else {
+                // Normal evaluation for +, -, ×, ÷
+                string = eval(
+                    string
+                    .replaceAll("×", "*")
+                    .replaceAll("÷", "/")
+                    .replaceAll("−", "-")
+                ).toString();
+                }
+            } catch {
+            string = "Error";
+        }
+    }
+    
     else {
       // append clicked button text
       string = string + value;
