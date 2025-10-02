@@ -4,11 +4,12 @@ const display = document.querySelector("input"); // define display
 
 buttons.forEach(button => {
   button.addEventListener("click", () => {
-    let value = button.textContent.trim(); // ✅ define value first
+    let value = button.textContent.trim(); // ✅ define value first 
+    // i am using it to remove the extra spaces between string characters like 1,2,3 and operators
+    //if i use inner.text or inner.html it will create extra space 
 
     if (button.classList.contains("backspace")) {
       string = string.slice(0, -1);
-
 
 
     // 1st convert string to array then again convert it into string
