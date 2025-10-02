@@ -1,38 +1,3 @@
-// const display = document.getElementById("calc-display");
-// const buttons = document.querySelectorAll("button");
-// buttons.forEach(button => {
-//   button.addEventListener("click", () => {
-//     const value = button.textContent.trim();
-
-//     if (value === "C") {
-//       display.value = "";
-//     }
-//     else if (value === "=") {
-//       try {
-//         display.value = eval(
-//           display.value
-//             .replaceAll("×", "*")
-//             .replaceAll("÷", "/")
-//             .replaceAll("−", "-")
-//             // "+" works as is, no replacement needed
-//         );
-//       } catch {
-//         display.value = "Error";
-//       }
-//     } 
-//         else if (button.classList.contains("backspace")) {
-//       display.value = display.value.slice(0, -1);
-//     } 
-//     else {
-//       display.value = display.value + value;
-//     }
-//   });
-// });
-
-
-
-
-
 let string = "";
 let buttons = document.querySelectorAll(".btn");
 const display = document.querySelector("input"); // define display
