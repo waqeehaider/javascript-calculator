@@ -1,10 +1,10 @@
 let string = "";
-let buttons = document.querySelectorAll(".btn");
+let buttons = document.querySelectorAll(".calc-btn");
 const display = document.querySelector("input");
 
 // ✅ Common function
-function handleInput(value, isBackspace = false) {
-  if (isBackspace) {
+function handleInput(value, Backspace = false) {
+  if (Backspace) {
     string = string.slice(0, -1);
   } 
   else if (value === "C") {
@@ -64,16 +64,7 @@ document.addEventListener("keydown", (e) => {
     // e.preventDefault();
     handleInput("Enter");
   }
+    else {
+    e.preventDefault();
+  }
 });
-
-
-
-
-
-
-
-
-
-
-
-
