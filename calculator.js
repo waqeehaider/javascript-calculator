@@ -17,7 +17,7 @@ function handleInput(value, Backspace) {
         if (parts.length === 2) {
           let a = parseFloat(parts[0].trim());
           let b = parseFloat(parts[1].trim());
-          string = ((a / 100) * b).toString();
+          string = ((a / 100) * b);
         }
         
       } else {
@@ -26,14 +26,14 @@ function handleInput(value, Backspace) {
             .replaceAll("×", "*")
             .replaceAll("÷", "/")
             .replaceAll("−", "-")
-        ).toString();
+        )
       }
     } catch {
       string = "Error";
     }
   } 
   else {
-    string += value;
+    string = string + value;
   }
 
   display.value = string;
