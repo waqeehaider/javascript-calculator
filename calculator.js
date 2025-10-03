@@ -2,7 +2,7 @@ let string = "";
 let buttons = document.querySelectorAll(".calc-btn");
 const display = document.querySelector("input");
 
-// ✅ Common function
+// Common function for Keyboard + Click Buttons
 function handleInput(value, Backspace) {
   if (Backspace) {
     string = string.slice(0, -1);
@@ -54,8 +54,8 @@ buttons.forEach(button => {
 // 🎯 Keyboard input
 document.addEventListener("keydown", (e) => {
   if (e.key.match(/[0-9+\-*/. % =]/)) {
-    e.preventDefault(); // 🚀 stop browser from typing in input
-    handleInput(e.key === "=" ? "=" : e.key);
+    e.preventDefault(); // stop browser from typing in input
+    handleInput(e.key === "=" ? "=" : e.key); //ternary operator
   } 
   else if (e.key === "Backspace") {
     e.preventDefault();
