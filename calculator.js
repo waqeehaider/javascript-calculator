@@ -58,11 +58,11 @@ document.addEventListener("keydown", (e) => {
     handleInput(e.key === "=" ? "=" : e.key);
   } 
   else if (e.key === "Backspace") {
-    // e.preventDefault();
+    e.preventDefault();
     handleInput("", true);
   } 
   else if (e.key === "Enter") {
-    // e.preventDefault();
+    e.preventDefault();
     handleInput("Enter");
   }
 //     else {
