@@ -3,7 +3,7 @@ let buttons = document.querySelectorAll(".calc-btn");
 const display = document.querySelector("input");
 
 // ✅ Common function
-function handleInput(value, Backspace = false) {
+function handleInput(value, Backspace) {
   if (Backspace) {
     string = string.slice(0, -1);
   } 
@@ -12,13 +12,14 @@ function handleInput(value, Backspace = false) {
   } 
   else if (value === "=" || value === "Enter") {
     try {
-      if (string.includes("% of")) {
-        let parts = string.split("% of");
+      if (string.includes("%-")) {
+        let parts = string.split("%-");
         if (parts.length === 2) {
           let a = parseFloat(parts[0].trim());
           let b = parseFloat(parts[1].trim());
           string = ((a / 100) * b).toString();
         }
+        
       } else {
         string = eval(
           string
@@ -64,7 +65,7 @@ document.addEventListener("keydown", (e) => {
     // e.preventDefault();
     handleInput("Enter");
   }
-    else {
-    e.preventDefault();
-  }
+//     else {
+//     e.preventDefault();
+//   }
 });
