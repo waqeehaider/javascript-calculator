@@ -65,6 +65,10 @@ document.addEventListener("keydown", (e) => {
     e.preventDefault();
     handleInput("Enter");
   }
+  else if (e.key === "c" || e.key === "C") {
+    e.preventDefault();
+    handleInput("C");
+  }
 //     else {
 //     e.preventDefault();
 //   }
